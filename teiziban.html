@@ -40,7 +40,6 @@ function performSignUp() {
   user.register({
     success: function(theUser) {
       console.log("User registered: " + JSON.stringify(theUser));
-
       openListPage();
     },
     failure: function(theUser, errorString) {
@@ -48,8 +47,13 @@ function performSignUp() {
       console.log("Unable to register user: " + errorString);
     }
   });
+  if (document.username.password.checked) {
+    alert(document.username.password.value);
+  }
 }
 </script>
+
 </body>
+
 
 </html>
