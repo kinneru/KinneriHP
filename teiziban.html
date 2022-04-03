@@ -45,12 +45,14 @@ function performSignUp() {
     failure: function(theUser, errorString) {
       alert("Unable to register user: " + errorString);
       console.log("Unable to register user: " + errorString);
-    }
-  });
-  if (document.username.password.checked) {
-    alert(document.username.password.value);
-  }
-}
+    }.
+    inputText.addEventListener('keyup', (e) => {
+      if (5 <= e.username.value.length) {
+      }
+
+      }
+});
+
 </script>
 
 </body>
