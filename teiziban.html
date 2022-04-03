@@ -29,7 +29,21 @@
 </head>
 
 <body>
-    <a href= "indextigi.html">戻る</a>
+    <a href= "indextigi.html">戻る</a><br>
+メールアドレス入力（今は何もありません）
+<script>
+var form=document.getElementById("form");
+var result=document.getElementById("result");
+var pattern = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]+.[A-Za-z0-9]+$/;
+
+form.addEventListener("input", (e) => {
+    if (pattern.test(form.value)) {
+         result.textContent = "認証しました";
+      } else {
+         result.textContent = "えら〜";
+     }
+})
+</script>
 </body>
 
 
