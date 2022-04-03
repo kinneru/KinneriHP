@@ -43,17 +43,21 @@ function performSignUp() {
       openListPage();
     },
     failure: function(theUser, errorString) {
-      alert("Unable to register user: " + errorString);
-      console.log("Unable to register user: " + errorString);
-    }.
-    inputText.addEventListener('keyup', (e) => {
-      if (5 <= e.username.value.length) {
-      }
-
-      }
-});
-
+      console.log("Unable to authenticate user: " + errorString);
+      alert("Unable to authenticate user: " + errorString);
+    }
+    input.addEventListener('input', username);
+    if (username > 6) {
+  atob("認証しました。", username);
+},
+})
+}
 </script>
+<form name="F1" action="#">
+<input type="checkbox" name="C1" value="AAA">AAA
+<input type="checkbox" name="C2" value="BBB">BBB
+<input type="button" value="OK" onclick="func()">
+</form>
 
 </body>
 
