@@ -32,18 +32,31 @@
     <a href= "indextigi.html">戻る</a><br>
 メールアドレス入力（今は何もありません）
 <script>
-var form=document.getElementById("form");
-var result=document.getElementById("result");
-var pattern = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]+.[A-Za-z0-9]+$/;
+function performSignUp() {
+  // Get the username and password from the UI.
+  var username = document.getElementById("username-field").value;
+  var password = document.getElementById("password-field").value;
 
-form.addEventListener("input", (e) => {
-    if (pattern.test(form.value)) {
-         result.textContent = "認証しました";
-      } else {
-         result.textContent = "えら〜";
-     }
-})
+  // Create a KiiUser object.
+  var user = KiiUser.userWithUsername(username, password);
+  // Register the user asynchronously.
+  user.register({
+    // If the user was registered
+    success: function(theUser) {
+      console.log("User registered: " + JSON.stringify(theUser));
+
+      // Go to the main screen.
+      openListPage();
+    },
+    // If the user was not registered
+    failure: function(theUser, errorString) {
+      alert("Unable to register user: " + errorString);
+      console.log("Unable to register user: " + errorString);
+    }
+  });
+}
 </script>
+
 </body>
 
 
