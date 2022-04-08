@@ -31,37 +31,14 @@
 <body>
     <a href= "indextugi.html">戻る</a><br>
 メールアドレス入力
-<script>
-function performSignUp() {
-  var username = document.getElementById("username-field").value;
-  var password = document.getElementById("password-field").value;
-
-  var user = KiiUser.userWithUsername(username, password);
-  user.register({ 
-    success: function(theUser) {
-      console.log("User registered: " + JSON.stringify(theUser));
-      openListPage();
-    },
-    failure: function(theUser, errorString) {
-      console.log("Unable to authenticate user: " + errorString);
-      alert("Unable to authenticate user: " + errorString);
-    }
-    input.addEventListener('input', username);
-    if (username > 6) {
-  atob("認証しました。", username);
-},
-})
-}
-</script>
 <form>
     <input type="email" 
             id="email"pattern=".+@gmail.com" size="30" required>
     <input class="favorite styled"
             type="button"
                 value="認証する">
-
     </form>
-</form>
+  <script type="text/python" src="index.py"></script>
 </body>
 
 
