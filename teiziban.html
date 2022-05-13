@@ -32,8 +32,8 @@
 
     <a href= "indextugi.html">戻る</a><br>
  <form method="POST" action="/board" th:object="${commentForm}">
+        <input placeholder="メールアドレス@gmail.com" th:field="*{mailAddress}">
         <input placeholder="お名前" th:field="*{name}">
-        <input placeholder="メールアドレス" th:field="*{mailAddress}">
         <textarea placeholder="コメント" rows="5" cols="80" wrap="off" th:field="*{comment}">
         </textarea>
         <button>送信</button>
