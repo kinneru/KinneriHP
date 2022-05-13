@@ -29,19 +29,15 @@
 </head>
 
 <body>
+
     <a href= "indextugi.html">戻る</a><br>
-メールアドレス
-<form>
-    <input type="email" 
-            id="email"pattern=".+@gmail.com" size="30" required>
-    <input class="favorite styled"
-            type="button"
-                value="認証する">
-    </form><br>
-パスワード
-<form>
-  <input type="password">
-</form>
+ <form method="POST" action="/board" th:object="${commentForm}">
+        <input placeholder="お名前" th:field="*{name}">
+        <input placeholder="メールアドレス" th:field="*{mailAddress}">
+        <textarea placeholder="コメント" rows="5" cols="80" wrap="off" th:field="*{comment}">
+        </textarea>
+        <button>送信</button>
+    </form>
   <script type="text/python" src="index.py"></script>
 </body>
 
